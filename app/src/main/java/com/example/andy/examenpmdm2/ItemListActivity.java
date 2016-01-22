@@ -1,5 +1,6 @@
 package com.example.andy.examenpmdm2;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -76,6 +77,13 @@ public class ItemListActivity extends FragmentActivity
             Intent detailIntent = new Intent(this, ItemDetailActivity.class);
             detailIntent.putExtra(ItemDetailFragment.ARG_ITEM_ID, id);
             startActivity(detailIntent);
+        }
+    }
+@Override
+    public void onActivityResult(int requestCode,int resultCode,Intent data){
+if(requestCode==1){
+    if(resultCode==Activity.RESULT_OK){
+            }
         }
     }
 }
