@@ -79,6 +79,12 @@ public class ItemListActivity extends FragmentActivity
             detailIntent.putExtra(ItemDetailFragment.ARG_ITEM_ID, id);
             startActivityForResult(detailIntent, 1);
         }
+        if(getResources().getBoolean(R.bool.dual_panel)==true){
+Toast.makeText(getBaseContext(),"Tumbado",Toast.LENGTH_SHORT).show();
+        }
+else if(getResources().getBoolean(R.bool.dual_panel)==false){
+       Toast.makeText(getBaseContext(),"Port",Toast.LENGTH_SHORT).show();
+        }
     }
 @Override
     public void onActivityResult(int requestCode,int resultCode,Intent data){
