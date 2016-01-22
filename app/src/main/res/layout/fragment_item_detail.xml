@@ -16,4 +16,5 @@
             android:textIsSelectable="true"
             tools:context=".ItemDetailFragment"
             android:id="@+id/item_detail" />
+
 </LinearLayout>
