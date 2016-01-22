@@ -61,12 +61,16 @@ public class ItemDetailFragment extends Fragment {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
                     ItemDetailFragment fragment=(ItemDetailFragment)getFragmentManager().findFragmentById(R.id.item_list);
                     if(fragment==null || !fragment.isInLayout()){
+                        //aki le mandamos al onActivityResult en ItemListAct el resultado OK
                         Intent intent=new Intent();
                         getActivity().setResult(Activity.RESULT_OK,intent);
+                        //cerramos la activity
                     getActivity().finish();
                     }else{
+                        //Borramos el texto del detail
                         ((TextView)rootView.findViewById(R.id.item_detail)).setText("");
                     }
                 }

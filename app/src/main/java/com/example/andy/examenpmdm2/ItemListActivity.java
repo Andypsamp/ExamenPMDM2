@@ -77,11 +77,14 @@ public class ItemListActivity extends FragmentActivity
             // for the selected item ID.
             Intent detailIntent = new Intent(this, ItemDetailActivity.class);
             detailIntent.putExtra(ItemDetailFragment.ARG_ITEM_ID, id);
+            //mandamos el numero que recibira el request code
             startActivityForResult(detailIntent, 1);
         }
+        //si la variable es true cuando esta en modo land nos mostrara un toast con el mensaje de tumbado
         if(getResources().getBoolean(R.bool.dual_panel)==true){
 Toast.makeText(getBaseContext(),"Tumbado",Toast.LENGTH_SHORT).show();
         }
+        //Y si es false significa que esta en modo port
 else if(getResources().getBoolean(R.bool.dual_panel)==false){
        Toast.makeText(getBaseContext(),"Port",Toast.LENGTH_SHORT).show();
         }
@@ -89,6 +92,7 @@ else if(getResources().getBoolean(R.bool.dual_panel)==false){
 @Override
     public void onActivityResult(int requestCode,int resultCode,Intent data){
 if(requestCode==1){
+    //si recibe el request code 1 y el resultado Ok nos mostrara un mensaje que indicara que la Activity esta cerrada.
     if(resultCode==Activity.RESULT_OK){
         Toast.makeText(getBaseContext(),"Activity cerrada",Toast.LENGTH_SHORT).show();
             }
